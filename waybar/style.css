@@ -1,0 +1,201 @@
+/* --- Global settings --- */
+* {
+    font-family: 'JetBrains Mono', 'Noto Sans Mono', 'Font Awesome 6 Free', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+/* --- Main bar --- */
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.6);
+    border-bottom: none;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    background-color: #1e1e2e;
+    margin: 4px 4px;
+    padding: 0 5px;
+    border-radius: 15px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 4px 0;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #cba6f7;
+    color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    color: #fff;
+}
+
+/* --- General module style --- */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#custom-energy,
+#custom-ssd,
+#language {
+    padding: 0 15px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    color: #000000;
+}
+
+/* --- Individual colors --- */
+
+#mode {
+    background-color: #64727D;
+    color: #ffffff;
+}
+
+#clock {
+    background-color: #cba6f7;
+    color: #1e1e2e;
+    margin-right: 10px;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: #a6e3a1;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #f38ba8;
+    }
+}
+
+#cpu {
+    background-color: #94e2d5;
+}
+
+#memory {
+    background-color: #f5c2e7;
+}
+
+#disk {
+    background-color: #fab387;
+}
+
+#backlight {
+    background-color: #f9e2af;
+}
+
+#network {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+}
+
+#network.disconnected {
+    background-color: #f38ba8;
+}
+
+#pulseaudio {
+    background-color: #f9e2af;
+}
+
+#pulseaudio.muted {
+    background-color: #45475a;
+    color: #b4befe;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+}
+
+#wireplumber.muted {
+    background-color: #f38ba8;
+}
+
+#temperature {
+    background-color: #fab387;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: #313244;
+}
+
+#idle_inhibitor {
+    background-color: #45475a;
+    color: #bac2de;
+}
+
+#idle_inhibitor.activated {
+    background-color: #a6e3a1;
+    color: #1e1e2e;
+}
+
+#language {
+    background: #00b093;
+    color: #ffffff;
+    min-width: 16px;
+}
+
+/* --- Custom modules --- */
+#custom-energy {
+    background-color: #313244;
+    color: #f38ba8;
+    border: 1px solid #f38ba8;
+}
+
+#custom-batt_temp {
+    background-color: #2e3440;
+    color: #ffffff;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 15px;
+}
+
+#custom-ssd {
+    background-color: #b4befe;
+    color: #1e1e2e;
+}
